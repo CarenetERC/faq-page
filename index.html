@@ -26,6 +26,25 @@
     h1 {
       text-align: center;
     }
+    .faq-controls button {
+      background-color: #0078D4;
+     color: white;
+      border: none;
+      padding: 10px 16px;
+      margin-left: 10px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-controls button:hover {
+      background-color: #005fa3;
+    }
+
+    .faq-controls button:active {
+      background-color: #004a82;
+    }
     .faq-item {
       border-bottom: 1px solid #ddd;
       padding: 15px 0;
@@ -55,14 +74,12 @@
   </style>
 </head>
 <body>
-  <div style="text-align: right; margin-bottom: 20px;">
-  <button onclick="expandAllFaqs()">Expand All</button>
-  <button onclick="collapseAllFaqs()">Collapse All</button>
-</div>
-
   <div class="faq-container">
     <h1>Frequently Asked Questions</h1>
-
+    <div style="text-align: right; margin-bottom: 20px;">
+     <button onclick="expandAllFaqs()">Expand All</button>
+     <button onclick="collapseAllFaqs()">Collapse All</button>
+    </div>
     <div class="faq-item">
       <div class="faq-question">What is the mid-month upload & what does it mean for me?</div>
       <div class="faq-answer">Upon the completion of a mid-month upload, half of the month’s transactions are available in everyone’s Emburse wallet. This gives cardholders additional time in the month to prepare any expenses that have already been posted to their card. 
