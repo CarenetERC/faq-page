@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ Page</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .faq-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+    .faq-question {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      padding-left: 10px;
+      color: #444;
+    }
+    .faq-question::after {
+      content: "+";
+      font-size: 1.3em;
+      transition: transform 0.3s ease;
+    }
+    .faq-question.active::after {
+      content: "−";
+    }
+  </style>
+</head>
+<body>
+  <div class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-item">
+      <div class="faq-question">What is SharePoint?</div>
+      <div class="faq-answer">SharePoint is a web-based collaboration platform developed by Microsoft that integrates with Microsoft 365.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How do I add a new document?</div>
+      <div class="faq-answer">Navigate to your document library and click the “Upload” or “New” button to add a document.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I share files externally?</div>
+      <div class="faq-answer">Yes, if external sharing is enabled by your admin. Use the “Share” button and choose the appropriate permissions.</div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+        const answer = item.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
