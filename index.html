@@ -31,6 +31,7 @@
       height: 40px;
       color: #f9f9f9;
       padding: 5px 10px;
+      margin-left: 10px;
       font-weight: bold;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -345,7 +346,8 @@
     </div>
     
   </div>
-  <script>
+   <script>
+    // Toggle individual FAQ
     document.querySelectorAll('.faq-question').forEach(item => {
       item.addEventListener('click', () => {
         item.classList.toggle('active');
@@ -353,36 +355,25 @@
         answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
       });
     });
+
+    // Expand all
+    function expandAllFaqs() {
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.add('active');
+        const answer = q.nextElementSibling;
+        answer.style.display = 'block';
+      });
+    }
+
+    // Collapse all
+    function collapseAllFaqs() {
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
+        const answer = q.nextElementSibling;
+        answer.style.display = 'none';
+      });
+    }
   </script>
-
-  <script>
-  // Existing toggle code
-  document.querySelectorAll('.faq-question').forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('active');
-      const answer = item.nextElementSibling;
-      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-    });
-  });
-
-  // Expand all FAQs
-  function expandAllFaqs() {
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.classList.add('active');
-      const answer = q.nextElementSibling;
-      answer.style.display = 'block';
-    });
-  }
-
-  // Collapse all FAQs
-  function collapseAllFaqs() {
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.classList.remove('active');
-      const answer = q.nextElementSibling;
-      answer.style.display = 'none';
-    });
-  }
-</script>
 
 </body>
 </html>
