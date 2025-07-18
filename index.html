@@ -55,6 +55,11 @@
   </style>
 </head>
 <body>
+  <div style="text-align: right; margin-bottom: 20px;">
+  <button onclick="expandAllFaqs()">Expand All</button>
+  <button onclick="collapseAllFaqs()">Collapse All</button>
+</div>
+
   <div class="faq-container">
     <h1>Frequently Asked Questions</h1>
 
@@ -106,9 +111,9 @@
 	 <div class="faq-answer">Please reach out to <a href="mailto:adgray1@carenethealth.com">Ashley Gray</a> prior to your time off/away to make a plan for your expenses.
     <br><br><b>Options:</b>
     <ul>
-      <li>Prior to your time off/away, you will upload receipts for all of your transactions for the month & code any expenses that are already available in your wallet. You will then leave coding and any pertinent information for the other expenses with Ashley Gray so that your report can be coded, finalized, and submitted in your absence.</li>
-      <li>Prior to your time off/away, you will assign a delegate user for your expense report. You will need to ensure that your delegate is aware that they will need to complete your report for you and that you provide them with all of the necessary documentation to do so. To assign a delegate user to your account, please follow the steps provided here: <a href="https://help.certify.com/hc/en-us/articles/15457956754573-Assigning-and-Managing-Delegate-Users">Assigning and Managing Delegate Users</a>
-      <br>Note: In order to assign someone as a delegate, they must first have an Emburse account. Please reach out to <a href="adgray1@carenethealth.com">Ashley Gray</a> to request an account for a new user.</li>
+      <li>Prior to your time off/away, you will need to upload receipts for all of your transactions for the month & code any expenses that are already available in your wallet. You will then leave coding and any pertinent information for the other expenses with Ashley Gray so that your report can be coded, finalized, and submitted in your absence.</li><br>
+      <li>Prior to your time off/away, you will assign a delegate user for your expense report. You will need to ensure that your delegate is aware that they will be responsible for completing your report for you, and that you provide them with all of the necessary documentation to do so. To assign a delegate user to your account, please follow the steps provided here: <a href="https://help.certify.com/hc/en-us/articles/15457956754573-Assigning-and-Managing-Delegate-Users">Assigning and Managing Delegate Users</a>
+      <br><b>Note:</b> In order to assign someone as a delegate, they must first have an Emburse account. Please reach out to <a href="adgray1@carenethealth.com">Ashley Gray</a> to request an account for a new user.</li>
     </ul>
 				  
   </div>
@@ -326,5 +331,35 @@
       });
     });
   </script>
+
+  <script>
+  // Existing toggle code
+  document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+      const answer = item.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+  // Expand all FAQs
+  function expandAllFaqs() {
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.classList.add('active');
+      const answer = q.nextElementSibling;
+      answer.style.display = 'block';
+    });
+  }
+
+  // Collapse all FAQs
+  function collapseAllFaqs() {
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.classList.remove('active');
+      const answer = q.nextElementSibling;
+      answer.style.display = 'none';
+    });
+  }
+</script>
+
 </body>
 </html>
