@@ -20,11 +20,9 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .faq-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
+      text-align: center;
+      margin-bottom: 10px;
+}
     .faq-header h1 {
       margin: 0;
       font-size: 1.8em;
@@ -37,7 +35,8 @@
       text-align: center;
     }
     .faq-controls {
-      display: flex;
+      text-align: center;
+      margin-bottom: 20px;
     }
     .faq-controls button {
       min-width: 130px;
@@ -97,12 +96,11 @@
   <div class="faq-container">
     <div class="faq-header">
       <h1>Frequently Asked Questions</h1>
-    <br>
+    </div>
     <div class="faq-controls">
       <button onclick="expandAllFaqs()">Expand All</button>
       <button onclick="collapseAllFaqs()">Collapse All</button>
     </div>
-  </div>
     <br><br>
     <div class="faq-item">
       <div class="faq-question">What is the mid-month upload & what does it mean for me?</div>
