@@ -98,9 +98,9 @@
     </div>
     <br><br>
     <div class="faq-controls">
-      <button onclick="expandAllFaqs()">Expand All</button>
-      <button onclick="collapseAllFaqs()">Collapse All</button>
+      <button id="toggleButton" onclick="toggleAllFaqs()">Expand All</button>
     </div>
+
     <br><br>
     <div class="faq-item">
       <div class="faq-question">What is the mid-month upload & what does it mean for me?</div>
@@ -371,22 +371,23 @@
       });
     });
 
-    // Expand all
-    function expandAllFaqs() {
-      document.querySelectorAll('.faq-question').forEach(q => {
-        q.classList.add('active');
-        const answer = q.nextElementSibling;
-        answer.style.display = 'block';
-      });
-    }
+    let allExpanded = false;
 
-    // Collapse all
-    function collapseAllFaqs() {
-      document.querySelectorAll('.faq-question').forEach(q => {
-        q.classList.remove('active');
+    function toggleAllFaqs() {
+      const questions = document.querySelectorAll('.faq-question');
+      questions.forEach(q => {
         const answer = q.nextElementSibling;
-        answer.style.display = 'none';
+        if (!allExpanded) {
+          q.classList.add('active');
+          answer.style.display = 'block';
+        } else {
+          q.classList.remove('active');
+          answer.style.display = 'none';
+        }
       });
+
+      allExpanded = !allExpanded;
+      document.getElementById("toggleButton").textContent = allExpanded ? "Collapse All" : "Expand All";
     }
   </script>
 
